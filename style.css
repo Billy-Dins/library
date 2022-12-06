@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+
+#background {
+    background-image: url(library-wallpaper.jpg);
+    background-position: 45%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#addBooks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(148, 36, 36);
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px black;
+    width: 400px;
+    height: 600px;
+}
+#bookInfo {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+#bookForm {
+    width: 90%;
+    height: 93%;
+    background-color: rgb(245, 222, 179);
+}
+ul, li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+li {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
