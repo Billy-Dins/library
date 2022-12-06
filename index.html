@@ -11,7 +11,7 @@
 <body>
     <div id="background">
             <div id="addBooks">
-                <form id='bookForm' action="">
+                <div id='bookPage'>
                     <fieldset id="bookInfo">
                         <legend>Book Info</legend>
                         <ul>
@@ -25,16 +25,22 @@
                             </li>
                             <li>
                                 <label for="bookPages">Number of Pages</label>
-                                <input type="text" name="pages" id="bookPages" placeholder="Number of Pages">
+                                <input type="number" name="pages" id="bookPages" placeholder="Number of Pages">
                             </li>
                             <li>
                                 <label for="">completed?</label>
                                 <input type="checkbox" name="completed" id="finished">
                             </li>
                         </ul>
-                        <button>Submit</button>
+                        <button onclick="addBookToLibrary()">Add new book</button>
                     </fieldset>
-                </form>
+                    <fieldset id="bookList">
+                        <legend>Book List</legend>
+                        <ul id="bookListContent">
+                            <li>book1</li>
+                        </ul>
+                    </fieldset>
+                </div>
             </div>
     </div>
 </body>

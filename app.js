@@ -1,14 +1,18 @@
 let myLibrary = [];
 
-function book(title, author, bookLength, finished) {
-    this.title = title;
-    this.author = author;
-    this.bookLength = bookLength;
-    this.finished = finished
+let bookList = document.querySelector('#bookListContent')
+
+function book() {
+    this.title = document.querySelector('#bookTitle').value;
+    this.author = document.querySelector('#bookAuthor').value;
+    this.bookLength = document.querySelector('#bookPages').value;
+    this.finished = document.querySelector('#finished').value
 };
 
 function addBookToLibrary() {
-    myLibrary.push()
-};
-
-console.log(myLibrary)
+    let newBook = new book()
+    console.log(newBook)
+    myLibrary.push(newBook)
+    console.log(myLibrary)
+    bookList.textContent = myLibrary[0].title
+}

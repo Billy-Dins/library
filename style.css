@@ -25,10 +25,16 @@ body {
     flex-direction: column;
     margin: 10px;
 }
-#bookForm {
+#bookPage {
     width: 90%;
     height: 93%;
     background-color: rgb(245, 222, 179);
+}
+#bookList {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 290px;
 }
 ul, li {
     list-style: none;
