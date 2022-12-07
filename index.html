@@ -4,43 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Library</title>
     <script defer src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="background">
             <div id="addBooks">
-                <div id='bookPage'>
+                <form id='bookPage'>
                     <fieldset id="bookInfo">
                         <legend>Book Info</legend>
                         <ul>
                             <li>
                                 <label for="bookTitle">Book Title</label>
-                                <input type="text" name="title" id="bookTitle" placeholder="Title">
+                                <input type="text" name="title" id="bookTitle" placeholder="Title" required>
                             </li>
                             <li>
                                 <label for="bookAuthor">Author</label>
-                                <input type="text" name="author" id="bookAuthor" placeholder="Author">
+                                <input type="text" name="author" id="bookAuthor" placeholder="Author" required>
                             </li>
                             <li>
                                 <label for="bookPages">Number of Pages</label>
-                                <input type="number" name="pages" id="bookPages" placeholder="Number of Pages">
-                            </li>
-                            <li>
-                                <label for="">completed?</label>
-                                <input type="checkbox" name="completed" id="finished">
+                                <input type="tel" name="pages" id="bookPages" maxlength="6" placeholder="Book length">
                             </li>
                         </ul>
-                        <button onclick="addBookToLibrary()">Add new book</button>
+                        <button type="button" id="addBook">Enter new book</button>
                     </fieldset>
                     <fieldset id="bookList">
                         <legend>Book List</legend>
                         <ul id="bookListContent">
-                            <li>book1</li>
                         </ul>
                     </fieldset>
-                </div>
+                </form>
             </div>
     </div>
 </body>
