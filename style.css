@@ -62,11 +62,12 @@ li {
     justify-content: space-between;
 }
 .book {
+    padding: 4px;
     border: 1px solid black; 
     margin-bottom: 5px;
     background-color: rgb(0, 0, 0, .2);
     display: grid;
-    grid-template-columns: 1.5fr .5fr .5fr;
+    grid-template-columns: 1.5fr .3fr .1fr;
 }
 .bookTitle, .bookAuthor, .bookPages {
     display: grid;
@@ -78,29 +79,26 @@ li {
     grid-column: 3 / 4;
     border: none;
     background-color: rgb(148, 36, 36);
+    color: burlywood;
+    border-radius: 10px;
+    margin-left: 10px;
 }
 .complete, .notComplete {
     display: grid;
-    grid-row: 2 / 3;
-    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
     border: none;
     color: burlywood;
     border-radius: 10px;
-    width: 75px;
 }
 .complete {
     background-color: olivedrab;
     color:black;
 }
 .notComplete {
-    background-color: wheat;
+    background-color: rgb(148, 36, 36);
     color:black;
 }
-.deleteBtn {
-    color: burlywood;
-    border-radius: 10px;
-    width: 75px;
-}
-.complete:hover, ,.notComplete:hover, .deleteBtn:hover {
+.complete:hover, .notComplete:hover, .deleteBtn:hover {
     cursor: pointer;
 }

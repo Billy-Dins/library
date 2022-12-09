@@ -54,7 +54,7 @@ function createNewBook(book, index) {
     newBook.appendChild(createBookElements('h5', `Title: ${book.title}`, 'bookTitle'))
     newBook.appendChild(createBookElements('h5', `Author: ${book.author}`, 'bookAuthor'))
     newBook.appendChild(createBookElements('h5', `Pages: ${book.pages}`, 'bookPages'))
-    let deleteBtn = newBook.appendChild(createBookElements('button', 'delete', 'deleteBtn'))
+    let deleteBtn = newBook.appendChild(createBookElements('button', 'x', 'deleteBtn'))
     deleteBtn.addEventListener('click', (e) => {
         e.preventDefault()
         deleteBook(index)
