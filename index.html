@@ -17,22 +17,26 @@
                         <ul>
                             <li>
                                 <label for="bookTitle">Book Title</label>
-                                <input type="text" name="title" id="bookTitle" placeholder="Title" required>
+                                <input type="text" name="title" id="bookTitle" placeholder="Title">
                             </li>
                             <li>
                                 <label for="bookAuthor">Author</label>
-                                <input type="text" name="author" id="bookAuthor" placeholder="Author" required>
+                                <input type="text" name="author" id="bookAuthor" placeholder="Author">
                             </li>
                             <li>
                                 <label for="bookPages">Number of Pages</label>
                                 <input type="tel" name="pages" id="bookPages" maxlength="6" placeholder="Book length">
                             </li>
+                            <li>
+                                <label for="readBtn">Read?</label>
+                                <input type="checkbox" name="readBtn" id="readBtn">
+                            </li>
                         </ul>
-                        <button type="button" id="addBook">Enter new book</button>
+                        <button type="button" id="addBookBtn">Enter new book</button>
                     </fieldset>
                     <fieldset id="bookList">
-                        <legend>Book List</legend>
-                        <ul id="bookListContent">
+                        <legend>Book Shelf</legend>
+                        <ul id="bookShelf">
                         </ul>
                     </fieldset>
                 </form>

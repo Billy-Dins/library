@@ -1,59 +1,84 @@
 let myLibrary = [];
 
-let bookList = document.querySelector('#bookListContent')
+const addBookBtn = document.querySelector('#addBookBtn')
+const addBook = document.querySelector('#addBookBtn')
+const libraryShelf = document.querySelector('#bookShelf')
+const deleteBtn = document.querySelector('deleteBtn')
 
-function Book() {
+
+function createBook() {
     this.title = document.querySelector('#bookTitle').value;
     this.author = document.querySelector('#bookAuthor').value;
-    this.bookLength = document.querySelector('#bookPages').value;
+    this.pages = document.querySelector('#bookPages').value;
+    this.read = document.querySelector('#readBtn').checked
 };
 
-let addBook = document.getElementById('addBook');
-addBook.addEventListener('click', addBookToLibrary);
+addBookBtn.addEventListener('click', () => {
+    let book = new createBook()
+    myLibrary.push(book)
+    libraryShelf.textContent = ''
+    renderBooks()
+    document.querySelector('#bookTitle').value = '';
+    document.querySelector('#bookAuthor').value = '';
+    document.querySelector('#bookPages').value = '';
+    document.querySelector('#readBtn').checked = false
+})
 
-function addBookToLibrary(e) {
-    e.preventDefault()
-    let books = new Book()
-    myLibrary.push(books)
-
-    let myBooks = document.createElement('div')
-    myBooks.setAttribute('id', 'myBooks')
-
-    let myTitle = document.createElement('li')
-    myTitle.setAttribute('id', 'bookTitle')
-    myTitle.textContent = myLibrary.at(-1).title
-    myBooks.appendChild(myTitle)
-
-    let myAuthor = document.createElement('li')
-    myAuthor.setAttribute('id', 'bookAuthor')
-    myAuthor.textContent = myLibrary.at(-1).author
-    myBooks.appendChild(myAuthor)
-
-    let myPages = document.createElement('li')
-    myPages.setAttribute('id', 'bookLength')
-    myPages.textContent = myLibrary.at(-1).bookLength
-    myBooks.appendChild(myPages)
-
-    let deleteBook = document.createElement('button')
-    deleteBook.setAttribute('id', 'deleteBtn')
-    deleteBook.setAttribute('onclick', 'deleteThisBook(event)')
-    deleteBook.textContent = 'delete'
-    myBooks.appendChild(deleteBook)
-
-    let toggleRead = document.createElement('button');
-    toggleRead.setAttribute('id', 'readBtn');
-    toggleRead.setAttribute('onclick', 'toggleReadEvent(event)')
-    toggleRead.textContent = 'complete'
-    myBooks.appendChild(toggleRead)
-
-    bookList.appendChild(myBooks)
-};
-
-function deleteThisBook(event) {
-    event.preventDefault()
-    console.log('hello world')
+function toggleRead(book) {
+    if (book.read == true) {
+        book.read = false;
+    } else {
+        book.read = true;
+    }
+    libraryShelf.textContent = ''
+    renderBooks()
 }
 
-function toggleReadEvent(event) {
-    event.preventDefault();
+function deleteBook(index) {
+    myLibrary.splice(index,1)
+    libraryShelf.textContent = ''
+    renderBooks()
 }
+
+function createBookElements(el, content, className) {
+    const element = document.createElement(el);
+    element.setAttribute('class', className)
+    element.textContent = content
+    return element;
+}
+
+function createNewBook(book, index) {
+    let newBook = document.createElement('div');
+    newBook.setAttribute('class', 'book');
+    newBook.setAttribute('id', index);
+    newBook.appendChild(createBookElements('h5', `Title: ${book.title}`, 'bookTitle'))
+    newBook.appendChild(createBookElements('h5', `Author: ${book.author}`, 'bookAuthor'))
+    newBook.appendChild(createBookElements('h5', `Pages: ${book.pages}`, 'bookPages'))
+    let deleteBtn = newBook.appendChild(createBookElements('button', 'delete', 'deleteBtn'))
+    deleteBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+        deleteBook(index)
+    })
+    if (book.read == true) {
+        let readBtn = newBook.appendChild(createBookElements('button', 'read', 'complete'))
+        readBtn.addEventListener('click', (e) => {
+            e.preventDefault()
+            toggleRead(book, index)
+        })
+    } else {
+        let readBtn = newBook.appendChild(createBookElements('button', 'read', 'notComplete'))
+        readBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+        toggleRead(book, index)
+        })
+    }
+    libraryShelf.appendChild(newBook)
+}
+
+function renderBooks() {
+    myLibrary.map(function (book,index) {
+        createNewBook(book,index)
+    });
+}
+
+renderBooks();

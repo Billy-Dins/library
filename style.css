@@ -48,7 +48,7 @@ body {
     flex-direction: column;
     height: 290px;
 }
-#bookListContent {
+#bookShelf {
     overflow-y: scroll;
 }
 ul, li {
@@ -61,36 +61,46 @@ li {
     margin-bottom: 20px;
     justify-content: space-between;
 }
-#myBooks {
+.book {
     border: 1px solid black; 
     margin-bottom: 5px;
     background-color: rgb(0, 0, 0, .2);
     display: grid;
-    grid-template-columns: 1fr .5fr .5fr;
+    grid-template-columns: 1.5fr .5fr .5fr;
 }
-#bookTitle, #bookAuthor, #bookLength {
-    grid-column: 1 / 2;
+.bookTitle, .bookAuthor, .bookPages {
     display: grid;
+    grid-column: 1 / 2;
     margin: 0px;
 }
-#deleteBtn {
-    grid-row: 2 / 3;
+.deleteBtn {
+    grid-row: 1 / 2;
     grid-column: 3 / 4;
     border: none;
     background-color: rgb(148, 36, 36);
 }
-#readBtn {
+.complete, .notComplete {
     display: grid;
     grid-row: 2 / 3;
-    grid-column: 2 / 3;
+    grid-column: 3 / 4;
     border: none;
-    background-color: rgb(148, 36, 36);
-}
-#readBtn, #deleteBtn {
     color: burlywood;
     border-radius: 10px;
     width: 75px;
 }
-#readBtn:hover, #deleteBtn:hover {
+.complete {
+    background-color: olivedrab;
+    color:black;
+}
+.notComplete {
+    background-color: wheat;
+    color:black;
+}
+.deleteBtn {
+    color: burlywood;
+    border-radius: 10px;
+    width: 75px;
+}
+.complete:hover, ,.notComplete:hover, .deleteBtn:hover {
     cursor: pointer;
 }
