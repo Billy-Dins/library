@@ -82,11 +82,13 @@ li {
     color: burlywood;
     border-radius: 10px;
     margin-left: 10px;
+    height: 18px;
 }
 .complete, .notComplete {
     display: grid;
     grid-row: 1 / 2;
     grid-column: 2 / 3;
+    height: 18px;
     border: none;
     color: burlywood;
     border-radius: 10px;
