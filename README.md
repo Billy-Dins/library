@@ -1,5 +1,5 @@
 ## Odin Project
-This page was built using [The Odin Project curriculum](https://www.theodinproject.com/lessons/node-path-javascript-library)
+This project was built using [The Odin Project curriculum](https://www.theodinproject.com/lessons/node-path-javascript-library)
 The intent of this project was to further practice DOM manipulation. Emphasis was placed on array manipulation and object constructors.
 
 ## Challenges
